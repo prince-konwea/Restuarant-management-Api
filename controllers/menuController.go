@@ -8,6 +8,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/prince-konwea/restuarant-management-api/database"
+	"github.com/prince-konwea/restuarant-management-api/models"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 )
@@ -37,6 +38,9 @@ func GetMenu() gin.HandlerFunc {
 
 func CreateMenu() gin.HandlerFunc {
 	return func(c *gin.Context) {
+
+		var menu models.Menu
+		var ctx, cancel = context.WithTimeout(context.Background(), 100*time.second)
 
 	}
 }
