@@ -32,7 +32,7 @@ func GetMenus() gin.HandlerFunc {
 
 func GetMenu() gin.HandlerFunc {
 	return func(c *gin.Context) {
-
+		var ctx, cancel = context.WithTimeout(context.Background(), 100*time.Second)
 	}
 }
 
@@ -41,7 +41,7 @@ func CreateMenu() gin.HandlerFunc {
 
 		var menu models.Menu
 		var ctx, cancel = context.WithTimeout(context.Background(), 100*time.second)
-
+		result, err := menuCollection.Find(context.TODO(), bson.M{})
 	}
 }
 
